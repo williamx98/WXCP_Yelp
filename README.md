@@ -8,13 +8,13 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] Table rows for search results should be dynamic height according to the content height. (3pt)
-- [ ] Custom cells should have the proper Auto Layout constraints. (+5pt)
-- [ ] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does). (+2pt)
+- [x] Table rows for search results should be dynamic height according to the content height. (3pt)
+- [x] Custom cells should have the proper Auto Layout constraints. (+5pt)
+- [x] Search bar should be in the navigation bar (doesn't have to expand to show location like the real Yelp app does). (+2pt)
 
 The following **stretch** features are implemented:
 
-- [ ] Infinite scroll for restaurant results. (+3pt)
+- [x] Infinite scroll for restaurant results. (+3pt)
 - [ ] Implement map view of restaurant results. (+3pt)
 - [ ] Implement the restaurant detail page. (+2pt)
 
@@ -24,20 +24,20 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. adding a price filter feature
+2. adding share on social media feature
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/willthexu/WXCP_Yelp/blob/master/gifs/basic.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+The Yelp API will sometimes not have an image url avaible i.e business["image_path"] = "". This is problematic since it's not nil until it's forced unwrapped. Business class has been adjusted accordingly. 
 
 ## License
 
