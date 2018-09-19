@@ -16,11 +16,14 @@ The following **stretch** features are implemented:
 
 - [x] Infinite scroll for restaurant results. (+3pt)
 - [ ] Implement map view of restaurant results. (+3pt)
-- [ ] Implement the restaurant detail page. (+2pt)
+- [x] Implement the restaurant detail page. (+2pt)
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] implented filter by location (not GPS, manual input through a settings page. Not persistent, yet. I have exams)
+- [x] "dynamic" navigation bar. Cancel button and filter button will show/hide depending on searchbar focus
+- [x] show an alert when a search returns no results
+- [x] filter by price
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -38,6 +41,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 The Yelp API will sometimes not have an image url avaible i.e business["image_path"] = "". This is problematic since it's not nil until it's forced unwrapped. Business class has been adjusted accordingly. 
+
+The YelpClient class wasn't setup to allow changing of locations. The default location is San Francisco. I have changed the pre-made YelpClient to allow for extra functionality.  
 
 ## License
 

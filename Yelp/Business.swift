@@ -16,12 +16,14 @@ class Business: NSObject {
     let distance: String?
     let ratingImage: UIImage?
     let reviewCount: NSNumber?
+    let priceString: String?
     let urlString: String?
     let idString: String?
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
         urlString = dictionary["url"] as? String
         idString = dictionary["id"] as? String
+        priceString = dictionary["price"] as? String
         let imageURLString = dictionary["image_url"] as? String ?? nil
         if imageURLString == nil || imageURLString == "" {
             imageURL = nil
@@ -114,15 +116,15 @@ class Business: NSObject {
         return businesses
     }
     
-    class func searchWithTerm(term: String, completion: @escaping ([Business]?, Error?) -> Void) {
-        _ = YelpClient.sharedInstance.searchWithTerm(term, completion: completion)
+    class func searchWithTerm(term: String, price: Int, completion: @escaping ([Business]?, Error?) -> Void) {
+        _ = YelpClient.sharedInstance.searchWithTerm(term, price: price, completion: completion)
     }
     
     class func searchWithTerm(term: String, sort: YelpSortMode?, categories: [String]?, completion: @escaping ([Business]?, Error?) -> Void) -> Void {
-        _ = YelpClient.sharedInstance.searchWithTerm(term, sort: sort, categories: categories, openNow: false, completion: completion)
+        _ = YelpClient.sharedInstance.searchWithTerm(term, offset: 0, price: 0, sort: sort, categories: categories, openNow: false, completion: completion)
     }
 
-    class func searchWithTerm(term: String, offset: Int, completion: @escaping ([Business]?, Error?) -> Void) -> Void {
-        _ = YelpClient.sharedInstance.searchWithTerm(term, offset: offset, sort: nil, categories: nil, openNow: nil, completion: completion)
+    class func searchWithTerm(term: String, price: Int, offset: Int, completion: @escaping ([Business]?, Error?) -> Void) -> Void {
+        _ = YelpClient.sharedInstance.searchWithTerm(term, offset: offset, price: price, sort: nil, categories: nil, openNow: nil, completion: completion)
     }
 }

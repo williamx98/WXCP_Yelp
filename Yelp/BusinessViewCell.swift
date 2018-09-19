@@ -16,6 +16,7 @@ class BusinessViewCell: UITableViewCell {
     @IBOutlet weak var reviewsLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var categoriesLabel: UILabel!
+    @IBOutlet weak var priceLabel: UITextField!
     
     var business: Business! {
         didSet {
@@ -28,6 +29,7 @@ class BusinessViewCell: UITableViewCell {
             reviewsLabel.text = "\(business.reviewCount!) Reviews"
             ratingLabel.image = business.ratingImage
             distanceLabel.text = business.distance
+            priceLabel.text = business.priceString
         }
     }
     
